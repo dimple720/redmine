@@ -5,7 +5,6 @@ db_server:
   container_name: redmine-db-server
   volumes:
     - /data/redmine/db:/var/lib/postgresql/data
-  net: redmine
 
 app_server:
   restart: always
@@ -13,7 +12,6 @@ app_server:
   container_name: redmine-app-server
   volumes:
     - /data/redmine/app/files:/usr/src/redmine/files
-  net: redmine
 
 web_server:
   restart: always
@@ -23,5 +21,5 @@ web_server:
     - "8081:8081"
   volumes:
     - /data/redmine/web/log:/var/log/nginx
-  net: redmine
+ 
 
